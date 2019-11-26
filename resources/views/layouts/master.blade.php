@@ -11,8 +11,10 @@
     <div id="page-title"><i>El cine en casa</i></div> 
     <div><img id="lupa" src="/IMG/lupa.png"></div>
     <div id="buscar">
-        <input type="text" name ="buscar" value="">
-        <input type="submit" name="buscar" value="Buscar">
+        <form action="/buscar" method="get">
+        <input type="text" name ="buscar">
+        <input type="submit"value="Buscar">
+        </form>
     </div>
     @auth <!--Solo lo ven los usuarios logeados-->
     <div id="botones">

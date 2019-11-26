@@ -1,5 +1,6 @@
 @extends('layouts.master') <!--Extiende desde master que contiene la cabecera.-->
 @section('contenido') <!--Dentro se coloca el contenido que se incrustará en el master. -->
+@auth
     <h2>Añadir peliculas:</h2>
     <div id="insertar">
         @if (isset($mensaje)) <!--Sentencia para mostrar los mensajes-->
@@ -43,4 +44,9 @@
         <br/>
          </div>
         </form>
-    @endsection
+@endauth
+@guest
+<h2>No tienes permiso para estar aquí</h2>
+<img id="acceso" src="/IMG/acceso_denegado.jpg" onclick="window.location.href='/inicio'"></div>
+@endguest
+@endsection

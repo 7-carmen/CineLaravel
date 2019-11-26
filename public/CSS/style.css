@@ -36,6 +36,10 @@ h1{
     margin-top: -60px;
 }
 
+#acceso{
+    margin-left: 430px;
+}
+
 #buscar{
     float: right;
     margin-top: -50px;
@@ -125,24 +129,23 @@ h2{
 
 #unoinfo{
     float: left;
-    margin-left: 200px; 
+    margin-left: 100px; 
     width: 250px;
 }
 
 #dosinfo{
     float: left;
-    margin-left: 200px; 
+    margin-left: 100px; 
 }
 
 #btn-datos{
     float: left;
-    margin-left: 200px; 
+    margin-left: 100px; 
 }
 
 /*Decoración de los generos en la vista Añadir pelicula*/
 #btn1{
     float: left;
-    margin-left: 60px; 
 }
 
 /*Decoración de los actores en la vista Añadir pelicula*/

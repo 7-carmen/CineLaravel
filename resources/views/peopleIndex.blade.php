@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('contenido')
+@auth
     <h2>Bienvenid@ a la página inicial de Gestión de Personas</h2>
     <div id="contenidoreal">
     <p>- Lista de personas:<p>
@@ -27,4 +28,9 @@
         <br /> <input type="submit" value="Añadir Persona">
     </form>    
 </div>
-    @endsection
+@endauth
+@guest
+<h2>No tienes permiso para estar aquí</h2>
+<img id="acceso" src="/IMG/acceso_denegado.jpg" onclick="window.location.href='/inicio'"></div>
+@endguest
+@endsection

@@ -49,7 +49,7 @@ class MovieController extends Controller{
         $file = $request->file('cartel');
         $name = $file->getClientOriginalName();
         Storage::disk('cartel')->put($name, File::get($file));
-        $movie->cartel = "/IMG/cartel/"+$name;
+        $movie->cartel = $name;
         $movie->nombre = $request->get('nombre');
         $movie->duracion = $request->get('duracion');
         $movie->anyo = $request->get('anyo');
@@ -134,5 +134,18 @@ class MovieController extends Controller{
         $data['movie'] = $movie;
         // return view("index",$data);
         echo "1";
+    }
+
+    public function search(Request $request){
+        $movie = movie::where('nombre', 'like', "%".$request->buscar."%")
+                        ->orWhere('anyo', 'like',"%".$request->buscar."%")
+                        ->get();
+        $data["movie"] = $movie;
+        if(sizeof($movie)==0){
+            $data["mensaje"]="No se han encontrado resultados para la busqueda";
+        }else{
+            $data["mensaje"]="Resultados:";
+        }
+        return \view("index",$data);
     }
 }
