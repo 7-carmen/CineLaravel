@@ -11,10 +11,10 @@
 <div id="cuerpo">
     @foreach($movie as $pelis)
         @auth
-        <div id = 'pelis'> <img src="{{ $pelis->cartel }}"> <span class='titulo'>{{$pelis->nombre}}</span> <br/><span>{{$pelis->anyo}}</span> <br/><span><a href='/movie/{{$pelis->id}}'>Ver</a></span> <span><a href='/movie/{{$pelis->id}}/editar'>Editar</a></span> <span><a id="{{$pelis->id}}" class="delete">Eliminar</a></span>  </div>    
+        <div id = 'pelis'> <img src="{{ $pelis->cartel }}"  onclick="window.location.href='/movie/{{$pelis->id}}'"> <span class='titulo'>{{$pelis->nombre}}</span> <br/><span>{{$pelis->anyo}}</span> <br/><span><a href='/movie/{{$pelis->id}}'>Ver</a></span> <span><a href='/movie/{{$pelis->id}}/editar'>Editar</a></span> <span><a id="{{$pelis->id}}" class="delete">Eliminar</a></span>  </div>    
         @endauth
         @guest
-        <div id = 'pelis'> <img src="{{ $pelis->cartel }}"> <span class='titulo'>{{$pelis->nombre}}</span> <br/><span>{{$pelis->anyo}}</span> <br/><span><a href='/movie/{{$pelis->id}}'>Ver</a></div>    
+        <div id = 'pelis'> <img src="{{ $pelis->cartel }}" onclick="window.location.href='/movie/{{$pelis->id}}'"> <span class='titulo'>{{$pelis->nombre}}</span> <br/><span>{{$pelis->anyo}}</span> <br/><span><a href='/movie/{{$pelis->id}}'>Ver</a></div>    
         @endguest
     @endforeach
 </div>

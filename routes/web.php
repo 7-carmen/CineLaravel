@@ -35,6 +35,7 @@ Route::get('movie/{id}/editar', 'MovieController@edit')->name('movie.edit');
 Route::post('movie/{id}', 'MovieController@update')->name('movie.update');
 Route::get('movie/{id}/borrar', 'MovieController@destroy')->name('movie.destroy');
 Route::get('buscar', 'MovieController@search')->name('movie.search');
+Route::get('buscar_año', 'MovieController@search_anyo')->name('search_anyo');
 
 
 Route::get('genero', 'GeneroController@index')->name('genero.index');

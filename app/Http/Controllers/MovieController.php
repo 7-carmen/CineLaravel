@@ -49,7 +49,7 @@ class MovieController extends Controller{
         $file = $request->file('cartel');
         $name = $file->getClientOriginalName();
         Storage::disk('cartel')->put($name, File::get($file));
-        $movie->cartel = $name;
+        $movie->cartel = "/IMG/cartel/".$name;
         $movie->nombre = $request->get('nombre');
         $movie->duracion = $request->get('duracion');
         $movie->anyo = $request->get('anyo');
@@ -146,6 +146,12 @@ class MovieController extends Controller{
         }else{
             $data["mensaje"]="Resultados:";
         }
+        return \view("index",$data);
+    }
+
+    public function search_anyo(Request $request){
+        $movie = movie::where('anyo', 'like',"%".$request->buscar."%")->get();
+        $data["movie"] = $movie;
         return \view("index",$data);
     }
 }
