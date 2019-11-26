@@ -1,6 +1,9 @@
 @extends('layouts.master') <!--Extiende desde master que contiene la cabecera.-->
 @section('contenido') <!--Dentro se coloca el contenido que se incrustará en el master. -->
 @auth
+<script>
+     $('select').selectpicker();
+</script>
     <h2>Añadir peliculas:</h2>
     <div id="insertar">
         @if (isset($mensaje)) <!--Sentencia para mostrar los mensajes-->
@@ -19,29 +22,35 @@
         <br /> <input type="submit" value="Añadir pelicula">    
 </div>
 <div id="btn1">
-        <h3>Generos:</h3>
-            @foreach ( $generos as $generos )
-            <input type="checkbox" name="generos[]" value="{{ $generos->id }}">{{ $generos->nombre }}
-            <!--En el name necesita [] por que es una colección.-->
-            <br>    
-            @endforeach
-        <br/>
+         <h3>Generos:</h3>
+            <select name="generos[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+                @foreach ( $generos as $generos )
+                <option  value="{{ $generos->id }}">{{ $generos->nombre }}</option>   
+                <!--<option name="generos[]" value="{{ $generos->id }}" selected="selected">{{ $generos->nombre }}</option>   -->
+                @endforeach
+            </select>
+        <br /> 
+        <br /> 
 </div>
 <div id="btn2">
-        <h3>Actores:</h3>
-            @foreach ( $personas as $actores )
-            <input type="checkbox" name="actores[]" value="{{ $actores->id }}">{{ $actores->name }}
-            <br>    
-            @endforeach
-        <br/>
+       <h3>Actores:</h3>
+            <select name="actores[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+                @foreach ( $personas as $actores )
+                <option  value="{{ $actores->id }}">{{ $actores->name }}</option> 
+                @endforeach
+            </select>
+        <br /> 
+        <br /> 
 </div>
 <div id="btn3">
-        <h3>Directores:</h3>
-            @foreach ( $personas as $directores )
-            <input type="checkbox" name="directores[]" value="{{ $directores->id }}">{{ $directores->name }}
-            <br>    
-            @endforeach
-        <br/>
+       <h3>Directores:</h3>
+            <select name="directores[]"  class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+                @foreach ( $personas as $directores )
+                <option value="{{ $directores->id }}">{{ $directores->name }}</option>
+                @endforeach
+            </select>
+        <br /> 
+        <br /> 
          </div>
         </form>
 @endauth

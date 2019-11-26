@@ -57,7 +57,7 @@ h2{
     height: 100px;
     margin-top: 0px;
     margin-bottom: 15px;
-
+    cursor: pointer;
 }
 
 #logearse{
@@ -68,11 +68,12 @@ h2{
     margin-left: 55px;
     text-align: center;
     float: left;
-    width: 200px;
+    width: 210px;
     height: 430px;
     border: 5px solid #FFDDFF;
     border-radius: 5px;
     margin-bottom: 35px;
+    cursor: pointer;
 }
 
 .titulo{
@@ -97,7 +98,7 @@ h2{
 
 /*Decoración del formulario de Añadir pelicula*/
 #insertar{
-    margin-left: 200px;
+    margin-left: 180px;
     float: left;
 }
 
@@ -151,13 +152,13 @@ h2{
 /*Decoración de los actores en la vista Añadir pelicula*/
 #btn2{
     float: left;
-    margin-left: 80px; 
+    margin-left: 40px; 
 }
 
 /*Decoración de los directores en la vista Añadir pelicula*/
 #btn3{
     float: left;
-    margin-left: 80px; 
+    margin-left: 40px; 
 }
 
 /*Decoración para los mensaje al actualizar insertar o borrar peliculas*/

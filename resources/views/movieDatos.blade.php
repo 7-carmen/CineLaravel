@@ -15,7 +15,7 @@
             <p><b>Sinopsis:</b> {{$movie->sinopsis}} </p>
     </div>
     <div id="dosinfo">
-            <p> <b>Año de estreno:</b> {{ $movie->anyo }}</p>
+            <p style="cursor: pointer;" onclick="window.location.href='/buscar_año?buscar={{$movie->anyo}}'"> <b>Año de estreno:</b> {{ $movie->anyo }}</p>
             <p> <b>Duracion:</b> {{ $movie->duracion }}</p>
             <p> <b>Generos:</b></p>
             <ul>

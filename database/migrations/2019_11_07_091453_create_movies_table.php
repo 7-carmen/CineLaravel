@@ -21,7 +21,6 @@ class CreateMoviesTable extends Migration
             $table->string("anyo");
             $table->longText("sinopsis");
             $table->string("rating");
-            $table->string("archivo");
             $table->timestamps();
         });
     }
