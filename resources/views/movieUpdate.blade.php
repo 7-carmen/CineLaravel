@@ -1,6 +1,6 @@
 @extends('layouts.master') <!--Extiende desde master que contiene la cabecera.-->
 @section('contenido') <!--Dentro se coloca el contenido que se incrustará en el master. -->
-
+@auth
     <script>
         $('select').selectpicker();
     </script>
@@ -21,26 +21,26 @@
     </div>
     <div id="btn">
         <h3>Generos:</h3>
-            <select class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+            <select name="generos[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
                 @foreach ( $generos as $generos )
-                <option name="generos[]" value="{{ $generos->id }}">{{ $generos->nombre }}</option>   
+                <option  value="{{ $generos->id }}">{{ $generos->nombre }}</option>   
                 <!--<option name="generos[]" value="{{ $generos->id }}" selected="selected">{{ $generos->nombre }}</option>   -->
                 @endforeach
             </select>
         <br /> 
         <br /> 
         <h3>Actores:</h3>
-            <select class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+            <select name="actores[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
                 @foreach ( $personas as $actores )
-                <option name="actores[]" value="{{ $actores->id }}">{{ $actores->name }}</option> 
+                <option  value="{{ $actores->id }}">{{ $actores->name }}</option> 
                 @endforeach
             </select>
         <br /> 
         <br /> 
         <h3>Directores:</h3>
-            <select class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
+            <select name="directores[]"  class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
                 @foreach ( $personas as $directores )
-                <option name="directores[]" value="{{ $directores->id }}">{{ $directores->name }}</option>
+                <option value="{{ $directores->id }}">{{ $directores->name }}</option>
                 @endforeach
             </select>
         <br /> 
@@ -49,4 +49,9 @@
         </form>
         <input type="button" name="cancel" value="Cancelar" onclick="window.location.href='/inicio'"><br />    
     </div>
+@endauth
+@guest
+<h2>No tienes permiso para estar aquí</h2>
+<img id="acceso" src="/IMG/acceso_denegado.jpg" onclick="window.location.href='/inicio'"></div>
+@endguest
 @endsection

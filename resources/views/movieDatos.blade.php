@@ -2,9 +2,11 @@
 @section('contenido') <!--Dentro se coloca el contenido que se incrustará en el master. -->
 <h2>{{$movie->nombre}}</h2>
 @if (isset($mensaje)) <!--Sentencia para mostrar los mensajes-->
+<div id="mensaje">
 <br>
 <span>{{ $mensaje }}</span>
 <br>
+</div>
 @endif
     <div id="carteles">
         <img src= "{{ $movie->cartel }}"  width='300px' height='450px'>
