@@ -20,7 +20,7 @@
             <p> <b>Generos:</b></p>
             <ul>
             @foreach ( $movie->generos as $generos )
-                <li>{{ $generos->nombre }}</li>
+                <li style="cursor: pointer;" onclick="window.location.href='/buscar_genero?buscar={{$generos->id}}'">{{ $generos->nombre }}</li>
             @endforeach
             </ul>
             <p> <b>Actores:</b></p>
