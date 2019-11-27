@@ -157,8 +157,8 @@ class MovieController extends Controller{
 
     public function search_genero(Request $request){
         $movie = genero::find($request->buscar)->movies;
-        $data["movie"] = $movie;
         //dd($movie);
+        $data["movie"] = $movie;
         return view("index", $data);
     }
     
