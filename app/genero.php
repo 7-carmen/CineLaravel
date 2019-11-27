@@ -10,6 +10,6 @@ class genero extends Model{
     ];
 
     public function movies(){
-        return $this->belongsToMany("App\movie", 'generos_movies', 'movies_id', 'generos_id');
+        return $this->belongsToMany("App\movie", 'generos_movies', 'generos_id', 'movies_id');
     }
 }
