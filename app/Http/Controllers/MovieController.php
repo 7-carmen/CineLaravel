@@ -129,9 +129,9 @@ class MovieController extends Controller{
      public function destroy($id){
         $movie = movie::find($id);
         $movie->delete();
-        $movie = movie::all();
-        $data['mensaje']="Pelicula eliminada con exito";
-        $data['movie'] = $movie;
+        // $movie = movie::all();
+        // $data['mensaje']="Pelicula eliminada con exito";
+        // $data['movie'] = $movie;
         // return view("index",$data);
         echo "1";
     }
@@ -154,4 +154,12 @@ class MovieController extends Controller{
         $data["movie"] = $movie;
         return \view("index",$data);
     }
+
+    public function search_genero(Request $request){
+        $movie = genero::find($request->buscar)->movies;
+        $data["movie"] = $movie;
+        //dd($movie);
+        return view("index", $data);
+    }
+    
 }

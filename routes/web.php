@@ -33,10 +33,10 @@ Route::get('movie/crear', 'MovieController@create')->name('movie.create');
 Route::post('movie', 'MovieController@store')->name('movie.store');
 Route::get('movie/{id}/editar', 'MovieController@edit')->name('movie.edit');
 Route::post('movie/{id}', 'MovieController@update')->name('movie.update');
-Route::get('movie/{id}/borrar', 'MovieController@destroy')->name('movie.destroy');
+Route::get('movie/borrar/{id}', 'MovieController@destroy')->name('movie.destroy');
 Route::get('buscar', 'MovieController@search')->name('movie.search');
 Route::get('buscar_año', 'MovieController@search_anyo')->name('search_anyo');
-
+Route::get('buscar_genero', 'MovieController@search_genero')->name('search_genero');
 
 Route::get('genero', 'GeneroController@index')->name('genero.index');
 Route::get('genero/{id}', 'GeneroController@show')->name('genero.show');

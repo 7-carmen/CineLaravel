@@ -27,18 +27,22 @@
             //alert("haago click")
             id = $(this).attr("id");
             elementoD = $(this);
-            peticion_http = new XMLHttpRequest();
-            peticion_http.onreadystatechange = function(){
+            //peticion_http = new XMLHttpRequest();
+            //peticion_http.onreadystatechange = function(respuesta){
                 //alert(peticion_http.readyState);
                 //alert(peticion_http.status)
-                if(peticion_http.readyState == 4 && peticion_http.status == 200){
-                     $(elementoD).parent().parent().remove();
-                }
-            };
-            url='http://localhost:3000/movie/'+id+'/borrar';
+              //  if(peticion_http.readyState == 4 && peticion_http.status == 200){
+                //     $(elementoD).parent().parent().remove();
+                //} 
+            //};
+            $.get('http://192.168.99.100:3000/movie/borrar/'+id, function(respuesta){
+                 $(elementoD).parent().parent().remove();
+            });
+            //url='http://192.168.99.100:3000/movie/borrar/'+id;
             //alert(url);
-            peticion_http.open('GET', url, true);
-            peticion_http.send();
+            //url={{url("movie/borrar")}}+id;
+            //peticion_http.open('GET', url, true);
+            //peticion_http.send();
         })
     })
 </script>
