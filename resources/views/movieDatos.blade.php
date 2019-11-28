@@ -26,13 +26,13 @@
             <p> <b>Actores:</b></p>
             <ul>
             @foreach ( $movie->actores as $actores )
-                <li >{{ $actores->name }}</li>
+                <li style="cursor: pointer;" onclick="window.location.href='/buscar_actor?buscar={{$actores->id}}'">{{ $actores->name }}</li>
             @endforeach
             </ul>
             <p> <b>Directores:</b></p>
             <ul>
             @foreach ( $movie->directores as $directores )
-                <li>{{ $directores->name }}</li>
+                <li style="cursor: pointer;" onclick="window.location.href='/buscar_directores?buscar={{$directores->id}}'">{{ $directores->name }}</li>
             @endforeach
             </ul>
             <p> <b>Puntuación:</b> {{ $movie->rating }}</p>

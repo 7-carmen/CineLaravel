@@ -162,11 +162,17 @@ class MovieController extends Controller{
         return view("index", $data);
     }
 
-    // public function search_actores(Request $request){
-    //     $movie = people::find($request->buscar)->movies;
-    //     //dd($movie);
-    //     $data["movie"] = $movie;
-    //     return view("index", $data);
-    // }
+    public function search_actores(Request $request){
+        $movie = people::find($request->buscar)->actores;
+        //dd($movie);
+        $data["movie"] = $movie;
+        return view("index", $data);
+    }
+
+    public function search_directores(Request $request){
+        $movie = people::find($request->buscar)->directores;
+        $data["movie"] = $movie;
+        return view("index", $data);
+    }
     
 }

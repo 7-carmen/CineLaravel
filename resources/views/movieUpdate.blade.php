@@ -9,16 +9,15 @@
     <div id="carteles1">
         <img src= "{{ $movie->cartel }}"  width='300px' height='450px'>
     </div>
-    <form method="POST" action="/movie/{{ $movie->id }}" enctype="multipart/form-data">
-            @csrf
     <div id="info">
+        <form method="POST" action="/movie/{{ $movie->id }}" enctype="multipart/form-data">
+            @csrf
         Nombre:<br/><input type='text' name='nombre' value='{{ $movie->nombre }}'><br/>
         <br />Año de estreno:<br /> <input type='text' name='anyo' value={{ $movie->anyo }}><br />
         <br />Duracion:<br /> <input type='text' name='duracion' value={{ $movie->duracion }}><br />
         <br />Duracion:<br /> <input type='text' name='rating' value={{ $movie->rating }}><br />
         <br />Sinopsis:<br /><textarea name="sinopsis" rows="10" cols="40" >{{ $movie->sinopsis }}</textarea><!-- <input type='text' name='sinopsis' value={{ $movie->sinopsis }}>--><br />
         <!--<br />Cartel:<br /><input type="file" name="cartel" value="{{$movie->cartel ?? '' }}">--><br>
-    </div>
     <div id="btn">
         <h3>Generos:</h3>
             <select name="generos[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
@@ -49,6 +48,7 @@
         </form>
         <input type="button" name="cancel" value="Cancelar" onclick="window.location.href='/inicio'"><br />    
     </div>
+        </div>
 @endauth
 @guest
 <h2>No tienes permiso para estar aquí</h2>
