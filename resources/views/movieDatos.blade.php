@@ -46,7 +46,7 @@
     @endauth
     @guest
     <div id="btn-datos">
-        <br/><input type="submit" name="ver" value="Ver" onclick="window.location.href='''"><br /> <!--Incluir ruta para ver la pelicula.-->
+        <br/><input type="submit" name="ver" value="Ver" onclick="window.location.href='/ver'"><br /> <!--Incluir ruta para ver la pelicula.-->
     </div> 
     @endguest
 @endsection
