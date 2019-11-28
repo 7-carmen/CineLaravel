@@ -20,7 +20,7 @@
         <br /> Sinopsis: <br /> <input type='text' name='sinopsis'><br />
         <br /> Cartel: <br/><input type="file" name="cartel"><br>
         <br /> <input type="submit" value="Añadir pelicula">    
-</div>
+
 <div id="btn1">
          <h3>Generos:</h3>
             <select name="generos[]" class="selectpicker" multiple data-live-search="true" data-style="btn-default btn-lg">
@@ -51,6 +51,7 @@
             </select>
         <br /> 
         <br /> 
+        </div>
          </div>
         </form>
 @endauth

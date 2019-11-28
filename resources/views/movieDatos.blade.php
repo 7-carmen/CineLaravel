@@ -26,7 +26,7 @@
             <p> <b>Actores:</b></p>
             <ul>
             @foreach ( $movie->actores as $actores )
-                <li>{{ $actores->name }}</li>
+                <li >{{ $actores->name }}</li>
             @endforeach
             </ul>
             <p> <b>Directores:</b></p>
