@@ -29,6 +29,7 @@ Route::get('cerrar_sesion', 'UserController@logout')->name('user.logout');
 Route::get('movie', 'MovieController@index')->name('movie.index');
 Route::get('inicio', 'MovieController@index2')->name('movie.index2');
 Route::get('movie/{id}', 'MovieController@show')->name('movie.show');
+Route::get('ver', 'MovieController@show2')->name('movie.show2');
 Route::get('movie/crear', 'MovieController@create')->name('movie.create');
 Route::post('movie', 'MovieController@store')->name('movie.store');
 Route::get('movie/{id}/editar', 'MovieController@edit')->name('movie.edit');

@@ -147,18 +147,22 @@ h2{
 /*Decoración de los generos en la vista Añadir pelicula*/
 #btn1{
     float: left;
+    margin-left: 450px;
+    margin-top: -470;
 }
 
 /*Decoración de los actores en la vista Añadir pelicula*/
 #btn2{
     float: left;
-    margin-left: 40px; 
+    margin-left: 786px; 
+    margin-top: -470;
 }
 
 /*Decoración de los directores en la vista Añadir pelicula*/
 #btn3{
     float: left;
-    margin-left: 40px; 
+    margin-left: 1112px; 
+    margin-top: -470;
 }
 
 /*Decoración para los mensaje al actualizar insertar o borrar peliculas*/

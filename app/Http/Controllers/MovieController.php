@@ -78,6 +78,10 @@ class MovieController extends Controller{
        return view("movieDatos",$data);
     }
 
+    public function show2(){
+       return view("ver");
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

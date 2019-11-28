@@ -1,7 +1,7 @@
 @extends('layouts.master') <!--Extiende desde master que contiene la cabecera.-->
 @section('contenido') <!--Dentro se coloca el contenido que se incrustará en el master. -->
 @auth
-<script>
+<script type="text/javascript" src="/JS/validacion.js">
      $('select').selectpicker();
 </script>
     <h2>Añadir peliculas:</h2>
@@ -11,14 +11,14 @@
             <span>{{ $mensaje }}</span>
             <br>
         @endif
-    <form action="/movie" method="post" enctype="multipart/form-data">
+    <form action="/movie" method="post" enctype="multipart/form-data" onsubmit="return validacion()">
         @csrf
-        <br /> Nombre:<br /> <input type='text' name='nombre'><br />
-        <br /> Duración:<br /> <input type='text' name='duracion'><br />
-        <br /> Año: <br /> <input type='text' name='anyo'><br />
-        <br /> Puntuación: <br /> <input type='text' name='rating'><br />
-        <br /> Sinopsis: <br /> <input type='text' name='sinopsis'><br />
-        <br /> Cartel: <br/><input type="file" name="cartel"><br>
+        <br /> Nombre:<br /> <input type='text' id="nombre" name='nombre'> <span id="e_nombre"></span><br />
+        <br /> Duración:<br /> <input type='text' id="duracion" name='duracion'><span id="e_duracion"></span><br />
+        <br /> Año: <br /> <input type='text' id="anyo" name='anyo'> <span id="e_anyo"></span><br />
+        <br /> Puntuación: <br /> <input type='text' id="rating" name='rating'><span id="e_puntuacion"></span><br />
+        <br /> Sinopsis: <br /> <input type='text' id="sinopsis" name='sinopsis'><span id="e_sinopsis"></span><br />
+        <br /> Cartel: <br/><input type="file" id="cartel" name="cartel"><span id="e_cartel"></span><br>
         <br /> <input type="submit" value="Añadir pelicula">    
 
 <div id="btn1">

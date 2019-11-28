@@ -41,7 +41,7 @@
      <div id="btn-datos">
         <br/><input type="submit" name="eliminar" value="Eliminar" onclick="window.location.href='/movie/{{$movie->id}}/borrar'"><br />
         <br/><input type="submit" name="editar" value="Editar" onclick="window.location.href='/movie/{{$movie->id}}/editar'"><br />
-        <br/><input type="submit" name="ver" value="Ver" onclick="window.location.href='''"><br /> <!--Incluir ruta para ver la pelicula.-->
+        <br/><input type="submit" name="ver" value="Ver" onclick="window.location.href='/ver'"><br /> <!--Incluir ruta para ver la pelicula.-->
     </div>
     @endauth
     @guest
