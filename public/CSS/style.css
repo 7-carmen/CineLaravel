@@ -176,3 +176,9 @@ h2{
 .filter-option{
     top: -12px !important;
 }
+
+#video {
+    align-content: center;
+    margin-left: 200;
+    margin-top: 50;
+}
